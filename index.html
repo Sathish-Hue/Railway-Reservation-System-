@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>RAILWAY TICKET RESERVATION</title>
+<style>
+h1, p, div, table {text-align: center;}
+</style>
+</head>
+<body>
+<h1>RAILWAY TICKET RESERVATION</h1>
+<center>
+<img src="image.jpg" height="400px" width="600px" alt="Railway Image">
+</center>
+<div>
+<input type="button" value="Train Details" onclick="location.href='#TrainDetails'">
+<input type="button" value="Book Ticket" onclick="location.href='#BookTicket'">
+<input type="button" value="Ticket Status" onclick="location.href='#TicketStatus'">
+<input type="button" value="About Us" onclick="location.href='#AboutUs'">
+</div>
+
+<div>
+    <form action="http://127.0.0.1:5000/book_ticket" method="post" id="BookTicket">
+<h1>Ticket Booking</h1>
+<table>
+<tr><th>From:</th><td><input type="text" required name="from"></td></tr>
+<tr><th>To:</th><td><input type="text" required name="to"></td></tr>
+<tr><th>Date:</th><td><input type="date" required name="date"></td></tr>
+<tr>
+<td><label for="passengers"><b>Passengers:</b></label></td>
+<td><input type="number" placeholder="Enter number of passengers" name="passengers"
+
+id="passengers" required></td>
+
+</tr>
+<tr><th>Mobile Number:</th><td><input type="text" required name="mobile_number"></td></tr>
+<tr>
+<td><label for="class"><b>Select a Class:</b></label></td>
+<td>
+<select id="class" name="class" required>
+<option value="special class">Special Class</option>
+<option value="medium class">Medium Class</option>
+<option value="low class">Low Class</option>
+</select>
+</td>
+</tr>
+</table>
+<div style="text-align: center;">
+    <input type="submit" value="Submit">
+</div>
+</form>
+</div>
+
+<div>
+<form action="http://127.0.0.1:5000/train_details" method="post" id="TrainDetails">
+<h1>Train Details</h1>
+<table>
+<tr><th>Train name:</th><td><input type="text" required name="train_name"></td></tr>
+<tr><th>Departure Time:</th><td><input type="time" required name="departure_time"></td></tr>
+<tr><th>Arrival Time:</th><td><input type="time" required name="arrival_time"></td></tr>
+</table>
+<div style="text-align: center;">
+<input type="submit" value="check">
+</div>
+</form>
+</div>
+
+<div>
+
+<form action="http://127.0.0.1:5000/train_status" method="post" id="TicketStatus">
+<h1>Ticket Status</h1>
+<table>
+<tr><th>Ticket Number:</th><td><input type="text" name="ticket_number" required></td></tr>
+<tr><th>Passenger Number:</th><td><input type="text" name="passenger_name" required>
+</td></tr>
+</table>
+<div style="text-align: center;">
+    <input type="submit" value="Check Status">
+</div>
+</form>
+</div>
+
+<div>
+<h1 id="AboutUs">About Us</h1>
+<p>This section provides information about our railway ticket reservation service.</p>
+<p>We are committed to providing convenient and reliable ticket booking services for our
+customers.</p>
+<p>For any inquiries or assistance, please contact us at </p>
